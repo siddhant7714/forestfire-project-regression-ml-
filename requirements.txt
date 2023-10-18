@@ -2,6 +2,7 @@
 # how to install open new terminal and give command " pip install -r requirements.txt "
 
 Flask
+Flask-Cors==3.0.9
 numpy
 pandas
 scikit-learn
