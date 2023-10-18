@@ -1,1 +1,7 @@
+# first install all the libraries or anything whatever is given in requirements.txt file
+# how to install open new terminal and give command " pip install -r requirements.txt "
+
 Flask
+numpy
+pandas
+scikit-learn
