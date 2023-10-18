@@ -5,7 +5,8 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 ## import ridge regressor model and scaler pickel
 ridge_model = pickle.load(open('models/ridge.pkl' , 'rb'))
@@ -13,11 +14,13 @@ standard_scaler = pickle.load(open('models/scaler.pkl' , 'rb'))
 
 ## Route for home page
 @app.route('/')
+@cross_origin()
 def index():
     return render_template('index.html')
 
 
 @app.route('/predictdata',methods=['GET','POST'])
+@cross_origin()  # this give access to anyone irrespective of country
 def predict_datapoint():
     if request.method=='POST':
         Temperature=float(request.form.get('Temperature'))
